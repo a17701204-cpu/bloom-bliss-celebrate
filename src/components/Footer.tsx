@@ -99,9 +99,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-primary">Our Services</h3>
             <div className="space-y-2">
-              {services.map((service) => (
+              {services.map((service, index) => (
                 <a
-                  key={service}
+                  key={`service-${index}`}
                   href="#"
                   className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
@@ -115,9 +115,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-primary">We Serve In</h3>
             <div className="space-y-2 mb-6">
-              {cities.slice(0, 6).map((city) => (
+              {cities.slice(0, 6).map((city, index) => (
                 <a
-                  key={city}
+                  key={`city-${index}`}
                   href="#"
                   className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
@@ -134,13 +134,13 @@ const Footer = () => {
               <h4 className="text-sm font-semibold mb-3 text-primary">Follow Us</h4>
               <div className="flex gap-3">
                 {[
-                  { icon: Facebook, href: "#", color: "text-blue-600" },
-                  { icon: Instagram, href: "#", color: "text-pink-600" },
-                  { icon: Twitter, href: "#", color: "text-blue-400" },
-                  { icon: Youtube, href: "#", color: "text-red-600" }
-                ].map(({ icon: Icon, href, color }) => (
+                  { icon: Facebook, href: "#facebook", color: "text-blue-600" },
+                  { icon: Instagram, href: "#instagram", color: "text-pink-600" },
+                  { icon: Twitter, href: "#twitter", color: "text-blue-400" },
+                  { icon: Youtube, href: "#youtube", color: "text-red-600" }
+                ].map(({ icon: Icon, href, color }, index) => (
                   <a
-                    key={href}
+                    key={`social-${index}`}
                     href={href}
                     className={`w-10 h-10 rounded-full bg-secondary hover:bg-primary/10 flex items-center justify-center transition-all duration-300 hover:scale-110 ${color} hover:shadow-lg`}
                   >
